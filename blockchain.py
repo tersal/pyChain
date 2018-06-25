@@ -11,6 +11,32 @@ from urllib.parse import urlparse
 
 from flask import Flask, jsonify, request
 
+class TransactionInput(object):
+	def __init__(self, hash, index):
+		self.hash = hash
+		self.output_index = index
+		self.signature = ""
+		
+	def add_signature(self, signature):
+		self.signature = signature
+
+class TransactionOutput(object):
+	def __init__(self, value, pub_key):
+		self.value = value
+		self.pub_key = pub_key
+
+class UTXO(object):
+	def __init__(self, hash, index)
+		self._hash = hash
+		self._index = index
+		
+class Transaction(object):
+	def _init__(self, transaction = None):
+		self._hash = ""
+		self._inputs = []
+		self._outputs = []
+
+
 class Blockchain(object):
 	def __init__(self):
 		self.chain = []
